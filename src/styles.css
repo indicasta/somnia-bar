@@ -1,3 +1,6 @@
+body {
+  background: black;
+}
 header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
     url(../images/bg.jpg);
@@ -21,12 +24,59 @@ h3 {
   letter-spacing: 5px;
   margin-bottom: 240px;
 }
+footer {
+  color: rgb(243, 243, 237);
+  background-image: linear-gradient(rgba(2, 4, 3, 0.8), rgba(2, 4, 3, 0.7)),
+    url("../images/footer-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 100px 20px;
+}
+footer h3 {
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: normal;
+  text-transform: none;
+  font-family: "Sancreek", cursive;
+}
+footer p {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  opacity: 0.7;
+  margin-right: 50px;
+}
+footer ul {
+  padding: 0;
+}
+footer li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+footer a {
+  font-family: "Roboto";
+  color: white;
+  opacity: 0.7;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  text-decoration: none;
+}
 .container {
   max-width: 1400px;
   margin: 0 auto;
 }
-
-@media (max-width: 900px) {
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 30px;
+}
+@media (max-width: 960px) {
   header {
     padding: 50px 0 90px 0;
   }
@@ -36,5 +86,12 @@ h3 {
   h3 {
     font-size: 12px;
     margin-bottom: 60px;
+  }
+  footer p,
+  footer a {
+    font-size: 8px;
+  }
+  footer p {
+    margin-right: 30px;
   }
 }
