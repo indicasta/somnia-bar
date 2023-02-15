@@ -1,5 +1,6 @@
 body {
   background: black;
+  color: rgb(243, 243, 237);
 }
 header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
@@ -17,6 +18,10 @@ h1 {
   font-size: 48px;
   line-height: 1.5;
 }
+h2 {
+  font-size: 36px;
+  margin: 0;
+}
 h3 {
   font-family: "Press Start 2P", cursive;
   text-transform: uppercase;
@@ -24,8 +29,20 @@ h3 {
   letter-spacing: 5px;
   margin-bottom: 240px;
 }
+main h5 {
+  color: rgb(184, 5, 106);
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1.5;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  background-color: rgb(53, 5, 21);
+  max-width: fit-content;
+  margin: 0;
+}
 footer {
-  color: rgb(243, 243, 237);
   background-image: linear-gradient(rgba(2, 4, 3, 0.8), rgba(2, 4, 3, 0.7)),
     url("../images/footer-bg.png");
   background-repeat: no-repeat;
@@ -64,8 +81,21 @@ footer a {
   line-height: 1.5;
   text-decoration: none;
 }
+main {
+  background-color: #210101;
+}
+main p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #f9f4ff;
+  opacity: 0.7;
+}
+section {
+  margin: 0 auto;
+  align-items: center;
+}
 .container {
-  max-width: 1400px;
   margin: 0 auto;
 }
 .container-3cols {
@@ -75,6 +105,19 @@ footer a {
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 80px;
 }
+.container-2cols {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.img-fluid {
+  max-width: 100%;
+}
+.right-info {
+  margin-top: 70px;
+  margin-left: 64px;
+  margin-right: 170px;
+  margin-bottom: 0;
+}
 @media (max-width: 960px) {
   header {
     padding: 50px 0 90px 0;
@@ -82,16 +125,31 @@ footer a {
   h1 {
     font-size: 24px;
   }
+  h2 {
+    font-size: 18px;
+    margin-top: 10px;
+  }
   h3 {
     font-size: 12px;
     margin-bottom: 60px;
+  }
+  h5 {
+    font-size: 8px;
+    margin: 10px;
   }
   footer p,
   footer a {
     font-size: 8px;
   }
+  .container-2cols,
   .container-3cols {
     text-align: center;
     grid-template-columns: 1fr;
+  }
+  .right-info {
+    margin: 10px auto;
+  }
+  .container {
+    overflow-y: auto;
   }
 }
