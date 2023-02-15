@@ -46,7 +46,6 @@ footer p {
   font-size: 16px;
   line-height: 1.5;
   opacity: 0.7;
-  margin-right: 50px;
 }
 footer ul {
   padding: 0;
@@ -74,7 +73,7 @@ footer a {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 30px;
+  column-gap: 80px;
 }
 @media (max-width: 960px) {
   header {
@@ -91,7 +90,7 @@ footer a {
   footer a {
     font-size: 8px;
   }
-  footer p {
-    margin-right: 30px;
+  .footer-container {
+    column-gap: 30px;
   }
 }
