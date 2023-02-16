@@ -240,7 +240,9 @@ ul {
   footer a {
     font-size: 16px;
   }
-
+  footer ul {
+    margin-top: 10px;
+  }
   .container-2cols,
   .container-3cols {
     text-align: center;
