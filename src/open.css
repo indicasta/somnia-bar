@@ -133,3 +133,14 @@ table.redTable tfoot td {
   background-clip: text;
   -webkit-background-clip: text;
 }
+@media (max-width: 960px) {
+  h1 {
+    font-size: 40px;
+  }
+  .table-container {
+    overflow-x: auto;
+  }
+  footer {
+    margin-bottom: 30px;
+  }
+}
