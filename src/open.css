@@ -109,11 +109,12 @@ table.redTable tfoot td {
 }
 .social-networks {
   font-size: 20px;
+  line-height: 2;
   width: 100%;
   background-color: var(--main-background-color);
   color: var(--primary-font-color);
   margin: 50px auto;
-  padding: 20px;
+  padding-top: 20px;
 }
 .social-networks a {
   margin: 5px;
@@ -140,6 +141,9 @@ table.redTable tfoot td {
   }
   .table-container {
     overflow-x: auto;
+  }
+  .social-networks {
+    font-size: 16px;
   }
   footer {
     margin-bottom: 30px;
