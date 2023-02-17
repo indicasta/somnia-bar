@@ -27,6 +27,7 @@
 body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
     url(../images/middle-bg.jpg);
+  filter: brightness(1.2);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
