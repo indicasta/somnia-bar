@@ -13,6 +13,16 @@
     rgb(255, 8, 90) 20.5%,
     rgb(255, 236, 68) 80.9%
   );
+  --instagram-background-color: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  --whatsapp-color: #25d366;
+  --facebook-color: #0b85ee;
 }
 body {
   background: black;
@@ -237,6 +247,29 @@ ul {
   row-gap: 0;
   margin: 0 auto;
   padding: 50px 0;
+}
+.social-networks {
+  font-size: 20px;
+  max-width: 1200px;
+}
+.social-networks a {
+  margin: 5px;
+}
+.social-links {
+  display: flex;
+  justify-content: center;
+}
+.fa-facebook {
+  color: transparent;
+  background: var(--facebook-color);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+.fa-instagram {
+  color: transparent;
+  background: var(--instagram-background-color);
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 @media (max-width: 960px) {
   header {
