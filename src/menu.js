@@ -17,80 +17,6 @@ let maxState = numOfPapers;
 let paper = new Array(numOfPapers);
 
 function addingPapers() {
-  // let paperHTML = `
-  //   <div id="p1" class="paper">
-  //     <div class="front">
-  //       <img
-  //         id="f1"
-  //         class="img-fluid front-content"
-  //         src="./images/Somnia-Menu/1.jpg"
-  //         alt="Cover Menu Somnia"
-  //       />
-  //     </div>
-  //     <div class="back">
-  //       <img
-  //         id="b1"
-  //         class="img-fluid back-content"
-  //         src="./images/Somnia-Menu/2.jpg"
-  //         alt="Back Cover Menu Somnia"
-  //       />
-  //     </div>
-  //   </div>
-  //   <div id="p2" class="paper">
-  //     <div class="front">
-  //       <img
-  //         id="f2"
-  //         class="img-fluid front-content"
-  //         src="./images/Somnia-Menu/3.jpg"
-  //         alt="Menu Somnia"
-  //       />
-  //     </div>
-  //     <div class="back">
-  //       <img
-  //         id="b2"
-  //         class="img-fluid back-content"
-  //         src="./images/Somnia-Menu/4.jpg"
-  //         alt="Menu Somnia"
-  //       />
-  //     </div>
-  //   </div>
-  //   <div id="p3" class="paper">
-  //     <div class="front">
-  //       <img
-  //         id="f3"
-  //         class="img-fluid front-content"
-  //         src="./images/Somnia-Menu/5.jpg"
-  //         alt="Menu Somnia"
-  //       />
-  //     </div>
-  //     <div class="back">
-  //       <img
-  //         id="b3"
-  //         class="img-fluid back-content"
-  //         src="./images/Somnia-Menu/6.jpg"
-  //         alt="Menu Somnia"
-  //       />
-  //     </div>
-  //   </div>
-  //   <div id="p4" class="paper">
-  //     <div class="front">
-  //       <img
-  //         id="f4"
-  //         class="img-fluid front-content"
-  //         src="./images/Somnia-Menu/7.jpg"
-  //         alt="Menu Somnia"
-  //       />
-  //     </div>
-  //     <div class="back">
-  //       <img
-  //         id="b4"
-  //         class="img-fluid back-content"
-  //         src="./images/Somnia-Menu/8.jpg"
-  //         alt="Menu Somnia"
-  //       />
-  //     </div>
-  //   </div>
-  // `;
   let paperHTML = `
     <div id="p1" class="paper">
       <div class="front">
@@ -134,9 +60,14 @@ function addingPapers() {
 }
 
 function openBook() {
+  if (window.matchMedia("(max-width: 900px)").matches) {
+    prevBtn.style.transform = "translateX(-85px)";
+    nextBtn.style.transform = "translateX(85px)";
+  } else {
+    prevBtn.style.transform = "translateX(-180px)";
+    nextBtn.style.transform = "translateX(180px)";
+  }
   book.style.transform = "translateX(50%)";
-  prevBtn.style.transform = "translateX(-180px)";
-  nextBtn.style.transform = "translateX(180px)";
   prevBtn.style.display = "block";
 }
 

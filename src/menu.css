@@ -112,3 +112,19 @@ i {
   max-width: 100%;
   object-fit: cover;
 }
+
+@media (max-width: 900px) {
+  .book {
+    margin-top: 15vh !important;
+    margin-bottom: 15vh !important;
+    width: 170px;
+    height: 250px;
+  }
+
+  i {
+    font-size: 2em;
+  }
+  button {
+    margin: 5px;
+  }
+}
