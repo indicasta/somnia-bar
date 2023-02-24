@@ -61,8 +61,8 @@ function addingPapers() {
 
 function openBook() {
   if (window.matchMedia("(max-width: 900px)").matches) {
-    prevBtn.style.transform = "translateY(-150px)";
-    nextBtn.style.transform = "translateY(-150px)";
+    prevBtn.style.transform = "translateY(-180px)";
+    nextBtn.style.transform = "translateY(-180px)";
   } else {
     prevBtn.style.transform = "translateX(-180px)";
     nextBtn.style.transform = "translateX(180px)";
