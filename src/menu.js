@@ -1,11 +1,10 @@
 // References to DOM elements
+
 const prevBtn = document.querySelector("#prev-btn");
 const nextBtn = document.querySelector("#next-btn");
 const book = document.querySelector("#book");
+
 prevBtn.style.display = "none";
-const paper1 = document.querySelector("#p1");
-const paper2 = document.querySelector("#p2");
-const paper3 = document.querySelector("#p3");
 
 // Event listeners
 prevBtn.addEventListener("click", goPrevious);
@@ -13,8 +12,126 @@ nextBtn.addEventListener("click", goNext);
 
 // Business Logic
 let currentState = 1;
-let numOfPapers = 3;
-let maxState = numOfPapers + 1;
+let numOfPapers = 38;
+let maxState = numOfPapers;
+let paper = new Array(numOfPapers);
+
+function addingPapers() {
+  // let paperHTML = `
+  //   <div id="p1" class="paper">
+  //     <div class="front">
+  //       <img
+  //         id="f1"
+  //         class="img-fluid front-content"
+  //         src="./images/Somnia-Menu/1.jpg"
+  //         alt="Cover Menu Somnia"
+  //       />
+  //     </div>
+  //     <div class="back">
+  //       <img
+  //         id="b1"
+  //         class="img-fluid back-content"
+  //         src="./images/Somnia-Menu/2.jpg"
+  //         alt="Back Cover Menu Somnia"
+  //       />
+  //     </div>
+  //   </div>
+  //   <div id="p2" class="paper">
+  //     <div class="front">
+  //       <img
+  //         id="f2"
+  //         class="img-fluid front-content"
+  //         src="./images/Somnia-Menu/3.jpg"
+  //         alt="Menu Somnia"
+  //       />
+  //     </div>
+  //     <div class="back">
+  //       <img
+  //         id="b2"
+  //         class="img-fluid back-content"
+  //         src="./images/Somnia-Menu/4.jpg"
+  //         alt="Menu Somnia"
+  //       />
+  //     </div>
+  //   </div>
+  //   <div id="p3" class="paper">
+  //     <div class="front">
+  //       <img
+  //         id="f3"
+  //         class="img-fluid front-content"
+  //         src="./images/Somnia-Menu/5.jpg"
+  //         alt="Menu Somnia"
+  //       />
+  //     </div>
+  //     <div class="back">
+  //       <img
+  //         id="b3"
+  //         class="img-fluid back-content"
+  //         src="./images/Somnia-Menu/6.jpg"
+  //         alt="Menu Somnia"
+  //       />
+  //     </div>
+  //   </div>
+  //   <div id="p4" class="paper">
+  //     <div class="front">
+  //       <img
+  //         id="f4"
+  //         class="img-fluid front-content"
+  //         src="./images/Somnia-Menu/7.jpg"
+  //         alt="Menu Somnia"
+  //       />
+  //     </div>
+  //     <div class="back">
+  //       <img
+  //         id="b4"
+  //         class="img-fluid back-content"
+  //         src="./images/Somnia-Menu/8.jpg"
+  //         alt="Menu Somnia"
+  //       />
+  //     </div>
+  //   </div>
+  // `;
+  let paperHTML = `
+    <div id="p1" class="paper">
+      <div class="front">
+        <img
+          id="f1"
+          class="img-fluid front-content"
+          src="./images/Somnia-Menu/1.jpg"
+          alt="Cover Menu Somnia"
+        />
+      </div>
+      <div class="back">
+        <img
+          id="b1"
+          class="img-fluid back-content"
+          src="./images/Somnia-Menu/2.jpg"
+          alt="Back Cover Menu Somnia"
+        />
+      </div>
+    </div>`;
+  for (let index = 1; index < numOfPapers; index++) {
+    paperHTML += `<div id="p${index + 1}" class="paper">
+      <div class="front">
+        <img
+          id="f${index + 1}"
+          class="img-fluid front-content"
+          src="./images/Somnia-Menu/${2 * index + 1}.jpg"
+          alt="Cover Menu Somnia"
+        />
+      </div>
+      <div class="back">
+        <img
+          id="b${index + 1}"
+          class="img-fluid back-content"
+          src="./images/Somnia-Menu//${2 * index + 2}.jpg"
+          alt="Back Cover Menu Somnia"
+        />
+      </div>
+    </div>`;
+  }
+  document.getElementById("papers").innerHTML = paperHTML;
+}
 
 function openBook() {
   book.style.transform = "translateX(50%)";
@@ -36,24 +153,22 @@ function closeBook(isFirstPage) {
 }
 
 function goNext() {
-  if (currentState < maxState) {
+  if (currentState <= maxState) {
     switch (currentState) {
       case 1:
         openBook();
-        paper1.classList.add("flipped");
-        paper1.style.zIndex = 1;
+        paper[0].classList.add("flipped");
+        paper[0].style.zIndex = 1;
         break;
-      case 2:
-        paper2.classList.add("flipped");
-        paper2.style.zIndex = 2;
-        break;
-      case 3:
+      case numOfPapers:
         closeBook(false);
-        paper3.classList.add("flipped");
-        paper3.style.zIndex = 3;
+        paper[numOfPapers - 1].classList.add("flipped");
+        paper[numOfPapers - 1].style.zIndex = numOfPapers;
         break;
       default:
-        throw new Error("unkown state");
+        paper[currentState - 1].classList.add("flipped");
+        paper[currentState - 1].style.zIndex = currentState;
+        break;
     }
 
     currentState++;
@@ -65,17 +180,17 @@ function goPrevious() {
     switch (currentState) {
       case 2:
         closeBook(true);
-        paper1.classList.remove("flipped");
-        paper1.style.zIndex = 3;
+        paper[0].classList.remove("flipped");
+        paper[0].style.zIndex = numOfPapers;
         break;
-      case 3:
-        paper2.classList.remove("flipped");
-        paper2.style.zIndex = 2;
-        break;
-      case 4:
+      case numOfPapers + 1:
         openBook();
-        paper3.classList.remove("flipped");
-        paper3.style.zIndex = 1;
+        paper[numOfPapers - 1].classList.remove("flipped");
+        paper[numOfPapers - 1].style.zIndex = 1;
+        break;
+      default:
+        paper[currentState - 2].classList.remove("flipped");
+        paper[currentState - 2].style.zIndex = numOfPapers - currentState + 2;
         break;
     }
 
@@ -83,3 +198,10 @@ function goPrevious() {
     nextBtn.style.display = "block";
   }
 }
+window.onload = function () {
+  addingPapers();
+  for (let index = 0; index < paper.length; index++) {
+    paper[index] = document.querySelector(`#p${index + 1}`);
+    paper[index].style.zIndex = numOfPapers - index;
+  }
+};

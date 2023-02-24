@@ -106,19 +106,6 @@ i {
   transform: rotateY(-180deg);
 }
 
-/* Paper Z-index */
-#p1 {
-  z-index: 3;
-}
-
-#p2 {
-  z-index: 2;
-}
-
-#p3 {
-  z-index: 1;
-}
-
 /* Customization */
 
 .img-fluid {
