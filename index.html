@@ -24,11 +24,29 @@
       src="https://kit.fontawesome.com/74f0ec7ef2.js"
       crossorigin="anonymous"
     ></script>
+    <script src="./src/index.js"></script>
     <title>Somnia Bar-Cute Bar in Barcelona</title>
   </head>
   <body>
     <div class="container">
       <header>
+        <div id="navbar-menu">
+          <div id="nav-bar" onclick="menuOnClick()">
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+          </div>
+          <nav class="nav" id="nav">
+            <ul>
+              <li><a href="/index.html" aria-selected="true">Home</a></li>
+              <li><a href="/menu.html">Menu</a></li>
+              <li><a href="/index.html#social-net">Contact</a></li>
+              <li><a href="/open.html">Opening Hours</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="navbar-bg" id="navbar-bg"></div>
         <img src="/images/somnia_icon.png" class="icon-somnia-up" />
         <h1>dreams are projections of our mind's echoes</h1>
         <h3>.somnia.</h3>
@@ -1066,7 +1084,7 @@
             </div>
           </div>
         </section>
-        <section class="social-networks text-center">
+        <section id="social-net" class="social-networks text-center">
           <div>
             <i class="fa-sharp fa-solid fa-location-dot"></i>
             Carrer de Montserrat, 13 bis, 08001 Barcelona
