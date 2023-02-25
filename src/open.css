@@ -247,6 +247,12 @@ table.redTable tfoot td {
   height: 460px;
   transform: translate(-60%, -30%);
 }
+.deep-footer {
+  display: block;
+  margin-top: 50px;
+  text-align: center;
+  color: var(--primary-font-color);
+}
 @media (max-width: 960px) {
   h1 {
     font-size: 40px;

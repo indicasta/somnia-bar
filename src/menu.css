@@ -1,4 +1,29 @@
-/* General */
+:root {
+  --primary-font-color: rgb(243, 243, 237);
+  --secondary-font-color: rgb(184, 5, 106);
+  --main-background-color: #210101;
+  --custom-gradient: linear-gradient(
+    109.6deg,
+    rgb(255, 0, 242) 11.2%,
+    rgb(246, 252, 250) 53.7%,
+    rgb(112, 246, 246) 100.2%
+  );
+  --menu-gradient: linear-gradient(
+    319.6deg,
+    rgb(255, 8, 90) 20.5%,
+    rgb(255, 236, 68) 80.9%
+  );
+  --instagram-background-color: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  --whatsapp-color: #25d366;
+  --facebook-color: #0b85ee;
+}
 
 * {
   margin: 0;
@@ -18,7 +43,12 @@ body {
   background-position: center;
   background-size: cover;
 }
-
+footer {
+  display: block;
+  position: fixed;
+  bottom: 50px;
+  width: 100%;
+}
 /* Button */
 button {
   border: none;
@@ -224,6 +254,18 @@ i {
   height: 460px;
   transform: translate(-60%, -30%);
 }
+.deep-footer {
+  display: block;
+  margin-top: 50px;
+  text-align: center;
+  color: var(--primary-font-color);
+}
+.cute-link {
+  color: transparent;
+  background: var(--menu-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
 @media (max-width: 900px) {
   .book {
     margin-top: 10vh !important;
@@ -237,5 +279,14 @@ i {
   }
   button {
     margin: 5px;
+  }
+  .cute-link {
+    font-size: 16px;
+  }
+  #navbar-menu {
+    z-index: 40;
+  }
+  .navbar-bg {
+    z-index: 39;
   }
 }

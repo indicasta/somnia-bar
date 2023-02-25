@@ -3,3 +3,6 @@ function menuOnClick() {
   document.getElementById("nav").classList.toggle("change");
   document.getElementById("navbar-bg").classList.toggle("change-bg");
 }
+$(document).ready(function () {
+  $("#deep-footer").load("footer.html");
+});

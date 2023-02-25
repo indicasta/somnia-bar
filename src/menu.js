@@ -136,3 +136,6 @@ window.onload = function () {
     paper[index].style.zIndex = numOfPapers - index;
   }
 };
+$(document).ready(function () {
+  $("#deep-footer").load("footer.html");
+});
